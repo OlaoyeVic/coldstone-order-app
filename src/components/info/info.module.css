@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+.img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.75;
+}
+.menubtn{
+    position: absolute;
+    bottom: 150px;
+}
+.menubtn button{
+    border: 2px solid rgb(139, 37, 19);
+    border-radius: 15px;
+    margin: 10px 10px;
+    height: 100px;
+    width: 150px;
+    font-family: cursive;
+    cursor: pointer;
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    color: rgb(139, 37, 19);
+    font-size: 50px;
+    font-family: 'Lobster Two', cursive;
+}
+.item{
+    display: flex;
+    float: left;
+    position: relative;
+}
+.item .item_image{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 35px;
+    float: left;
+    margin: 45px 74px;
+    cursor: pointer;
+    width: 300px;
+}
+.item_name{
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    padding: 25px;
+    margin: 350px 125px;
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(139, 37, 19);
+    white-space: nowrap;
+}
+.item_description{
+    position: absolute;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(139, 37, 19);
+    padding: 1 rem;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+.img_container:hover .item_description{
+    bottom: 0;
+    height: 50%;
+    opacity: 0.7;
+}
+.text{
+    color: #f7f7f7;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.process_container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(139, 37, 19);
+}
+ .process_container img{
+    padding: 50px;
+}
+.process_container p{
+    display: none;
+}
+.process_container caption{
+    display: none;
+}
+.banner_container img{
+    position: relative;
+    width: 100%;
+    display: flex;
+    opacity: 2;
+}
+@media only screen and (max-width: 960px){
+    .process_container{
+        flex-direction: column !important;
+    }
+    .item{
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        overflow: hidden;
+    }
+    .process_container caption{
+        display: flex;
+        font-family: 'Lobster Two', cursive;
+        color: white;
+    }
+    .process_container p{
+        display: flex;
+        font-family: 'Lobster Two', cursive;
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,161 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    height: 500px;
+    position: relative;
+}
+ 
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(139, 37, 19);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+  
+.card button:hover {
+    opacity: 0.7;
+}
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+    border-right: 6px solid whitesmoke;
+    height: 100%;
+}
+.wrapper>*{
+    flex: 1 1 1 200px;
+    margin: 30px;
+}
+.category{
+    flex: 1;
+    align-self: flex-start;
+    justify-content: center;
+    margin-left: 10em;
+    font-size: 50px;
+    font-family: 'Lobster Two', cursive;
+    color: rgb(139, 37, 19);
+    white-space: nowrap;
+}
+.cart{
+    width: 700px;
+    height: 500px;
+    border-radius: 10px;
+    border: 3px solid sienna;
+    margin: auto;
+    background-color: white;
+    position: absolute;
+    top: 300px;
+    left: 400px;
+}
+.cart p{
+    padding: 10px;
+}
+.cart .deal{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.flavour{
+    background-color: #f7f7f7;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lobster Two', serif;
+    margin: 10px;
+}
+.options {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom: 1px solid #f7f7f7;
+}
+.options input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.radio {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.options:hover input ~ .radio {
+    background-color: #ccc;
+}
+.options input:checked ~ .radio {
+    background-color: #2196F3;
+}
+.radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.options input:checked ~ .radio:after {
+    display: block;
+}
+.options .radio:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+.no{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border: 5px solid #eee;
+    cursor: pointer;
+    color:rgb(139, 37, 19);
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+}
+.cart_button{
+    background-color: rgb(139, 37, 19);
+    border: none;
+    color: white;
+    margin-left: 22em;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+}
+.cart_button:hover{
+    opacity: 0.7;
+}

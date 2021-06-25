@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+footer{
+    color: white;
+    background-color: rgb(139, 37, 19);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+ul{
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+li{
+    padding: 0 15px;
+    margin-bottom: 16px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+Link{
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+i{
+    cursor: pointer;
+    font-size: 30px;
+}
+@media only screen and (max-width: 768px){
+    footer{
+        padding: 100px 20px;
+    }
+}

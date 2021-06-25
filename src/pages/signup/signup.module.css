@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.container{
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    top: 150px;
+    left: 350px;
+    width: 800px;
+    height: 450px;
+    margin: 0 auto 100px;
+    background: #fff;
+    border-radius: 10px;
+    background-position: center;
+}
+.wrapper>*:nth-child(1),.wrapper>*:nth-child(2){
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 14px 36px;
+    outline: none;
+}
+form .wrapper{
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0px;
+    /* margin: 20px 20px; */
+    margin-top: 20px;
+    margin-left: 28px;
+    height: 70px;
+}
+.inputwrap>*:nth-child(1),.inputwrap>*:nth-child(2){
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 14px 36px;
+    margin: 20px 0px;
+    outline: none;
+}
+form .inputwrap{
+    padding: 10px 0;
+    margin: 10px 30px;
+    height: 70px;
+    width: 50vw
+}
+form .checkbox{
+    margin-top: 100px;
+    margin-left: 30px;
+}
+b{
+    padding: 1.5rem 0.5rem;
+    font-weight: bold;
+    font-size: 20px;
+}
+.btn button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: rgb(139, 37, 19);
+    border-radius: 10px;
+    width: 50%;
+    height: 35px;
+    line-height: 35px;
+    border: none;
+    outline: none;
+	cursor: pointer;
+    font-size: 1.1em;
+    margin: 3em 10em;
+    color: white;
+}
+@media screen and (max-width: 960px){
+    form{
+        flex-direction: column !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+}
