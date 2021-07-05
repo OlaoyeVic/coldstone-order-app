@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../menu/menu.module.css'
 import { Footer, Navbar } from '../../components'
 import MenuItems from '../../components/menuItems/MenuItems'
-import OrderedItems from '../../components/orderedItems/OrderedItems'
+import Cart from '../../components/cart/Cart'
 import { ColdstoneContext } from '../../context/context'
 
 function Menu(){
@@ -11,7 +11,7 @@ function Menu(){
             <Navbar />
             <div className={styles.menu}>
                 <MenuItems />
-                <OrderedItems />
+                <Cart />
             </div>
             <Footer />
         </div>

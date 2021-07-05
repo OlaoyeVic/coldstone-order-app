@@ -2,15 +2,19 @@ import React from 'react';
 import styles from '../menuItems/menuItems.module.css'
 import { ColdstoneContext } from '../../context/context';
 import { useState } from 'react/cjs/react.development';
+import {useHistory} from 'react-router-dom'
 
-function MenuItems(){
-    const {items} = React.useContext(ColdstoneContext)
-    console.log(items) 
+function MenuItems(props){
+    const {items, cart, setCart} = React.useContext(ColdstoneContext)
+    console.log(items)
 
     const [click, setClick] = useState(false)
     const [count, setCount] = useState(1)
     const [currItem, setCurrItem] = useState()
-    
+
+    const addToCart = ()=>{
+        setCart([...cart, currItem])
+    }
     const handleClick = (item)=> {
         setClick(!click)
         setCurrItem(item)
@@ -27,28 +31,15 @@ function MenuItems(){
     const cakeItems = items.filter(function(item){
         return item.category === "CAKE"
     }).map((item, index) =>(
-        // <div className = {styles.card}>
-        //     <img src = {item.imageUrl} />
-        //     <h1>{item.name}</h1>
-        //     <p className={styles.price}>${item.price}</p>
-        //     <p>{item.description}</p>
-        //     <p><button onClick={() => handleClick(item)}>More Details...</button></p>
-        // </div>
-        <ItemCard item={item} handleClick={handleClick} key={index} count={count} />
+        <ItemCard item={item} items={items} handleClick={handleClick} key={index} count={count}/>
     ))
 
     const iceCreamItems = items.filter(function(item){
         return item.category === "ICE CREAM"
     }).map((item, index) =>(
-        // <div className = {styles.card}>
-        //     <img src = {item.imageUrl} />
-        //     <h1>{item.name}</h1>
-        //     <p className={styles.price}>${item.price}</p>
-        //     <p>{item.description}</p>
-        //     <p><button onClick={() => handleClick(item)}>More Details...</button></p>
-        // </div>
-        <ItemCard item={item} handleClick={handleClick} key={index} />
+        <ItemCard item={item} handleClick={handleClick} key={index} count={count}/>
     ))
+    
     return(
         <div className={styles.wrapper}>
             <h2 className={styles.category}>Coldstone Cakes</h2>
@@ -56,7 +47,7 @@ function MenuItems(){
             <h2 className={styles.category}>Ice Cream</h2>
             {iceCreamItems}
             {click ? <div className={styles.cart}>   
-                <p className={styles.deal}>${currItem?.price} deal</p>
+                <p className={styles.deal}>${currItem.price*count} deal</p>
                 <p style={{fontSize: '20px'}}>Any of the new love flavours + Any plain flavour</p>
                 <p className={styles.flavour}>Plain flavour cup (Choose One)</p>
                 <label className={styles.options}>Cake Batter cream
@@ -79,18 +70,20 @@ function MenuItems(){
                     <input type="radio" name="radio" />
                     <span className={styles.radio}></span>
                 </label>
-                <button className={styles.no} onClick={increaseQuantity}>+</button>
-                <strong>{count}</strong>
                 <button className={styles.no} onClick={decreaseQuantity}>-</button>
-                <button className={styles.cart_button}>Add to cart</button>
+                <strong>{count}</strong>
+                <button className={styles.no} onClick={increaseQuantity}>+</button>
+                <button className={styles.cart_button} onClick = {addToCart}>Add to cart</button>
             </div> : <div className={styles.wrapper}></div>}
             
         </div>
     )
 }
 
-function ItemCard({ item, handleClick, count }){
-    const total = item?.price * count
+function ItemCard({ item, handleClick, count, items}){
+    const total = item.price * count
+    console.log(total)
+    
     return(
         <div className = {styles.card}>
             <img src = {item.imageUrl} />
@@ -98,7 +91,6 @@ function ItemCard({ item, handleClick, count }){
             <p className={styles.price}>${item.price}</p>
             <p>{item.description}</p>
             <p><button onClick={() => handleClick(item)}>More Details...</button></p>
-            <p>{total}</p>
         </div>
     )
 }

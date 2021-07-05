@@ -13,10 +13,13 @@ const ColdstoneContext = React.createContext()
 
 const ColdstoneProvider = ({children}) =>{
     const [items, setItems] = useState([])
-    
+    const [cart, setCart] = useState([])
     const loginUser = async({ emailAddress, password})=>{
         const response = await axios.post(`${rootUrl}/user/login`, { emailAddress, password })
-        console.log(response)
+        if(response.status === 200){
+            const { token } = response.data
+            localStorage.setItem("token", JSON.stringify(token))
+        }
         return response
     }
 
@@ -50,14 +53,19 @@ const ColdstoneProvider = ({children}) =>{
    }
    useEffect(checkRequest, [])
 
-   const addCart = ()=>{
-       axios.post(`${rootUrl}/cart/user`)
-       .then(response =>response.data)
-       .catch(err =>{
-           console.log(err)
+   const getCartProducts = ()=>{
+       const token = JSON.parse(localStorage.getItem("token"))
+       console.log(token)
+       axios.post(`${rootUrl}/cart/user`,{items: cart}, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
        })
+       .then(response => console.log(response))
    }
-
-    return <ColdstoneContext.Provider value = {{loginUser,signupUser, googleUser, facebookUser, items, addCart}}>{children}</ColdstoneContext.Provider>
+ useEffect(() => {
+     getCartProducts()
+ }, [cart])
+    return <ColdstoneContext.Provider value = {{loginUser,signupUser, googleUser, facebookUser, items, getCartProducts, cart, setCart}}>{children}</ColdstoneContext.Provider>
 }
 export {ColdstoneProvider, ColdstoneContext}
