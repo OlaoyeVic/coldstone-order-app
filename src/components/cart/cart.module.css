@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cart_info{
+    position: fixed;
+    display: block;
+    width: 25%;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.header{
+    text-align: center;
+    margin: 30px 50px;
+    font-size: 30px;
+    font-family: 'Lobster Two';
+    color: rgb(139, 37, 19);
+}
+.company_name{
+    color: rgb(139, 37, 19);
+    text-transform: uppercase;
+    color: black;
+    font-family: monospace;
+    text-align: center;
+    margin: 15px 50px;
+}
+.checkout{
+    width: 235px;
+    height: 40px;
+    margin: 30px 50px;
+    background-color: rgb(139, 37, 19);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+}
+.checkout:hover{
+    opacity: 0.9;
+}

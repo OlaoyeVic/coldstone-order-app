@@ -32,6 +32,7 @@
     opacity: 0.7;
 }
 .wrapper{
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -61,9 +62,10 @@
     border: 3px solid sienna;
     margin: auto;
     background-color: white;
-    position: absolute;
-    top: 300px;
+    position: fixed;
+    top: 120px;
     left: 400px;
+    z-index: 999;
 }
 .cart p{
     padding: 10px;
@@ -157,5 +159,22 @@
     cursor: pointer;
 }
 .cart_button:hover{
+    opacity: 0.7;
+}
+.icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    background-color: rgb(139, 37, 19);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+}
+.icon:hover{
     opacity: 0.7;
 }
