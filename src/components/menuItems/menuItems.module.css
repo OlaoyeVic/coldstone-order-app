@@ -1,4 +1,8 @@
-.card {
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 400px;
     margin: auto;
@@ -177,4 +181,16 @@
 }
 .icon:hover{
     opacity: 0.7;
+}
+@media only screen and (max-width: 960px){
+    .wrapper{
+        flex-direction: column !important;
+        width: 100% !important;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .category{
+        flex-direction: column;
+        margin-left: 20px;
+    }
 }

@@ -5,13 +5,9 @@
     box-sizing: border-box;
 }
 .cart_info{
-    position: fixed;
     display: block;
     width: 25%;
-    position: sticky;
-    top: 0;
     bottom: 0;
-    overflow: hidden;
 }
 .header{
     text-align: center;
@@ -45,4 +41,29 @@
 }
 .checkout:hover{
     opacity: 0.9;
+}
+.cart_details{
+    margin: 10px;
+    font-family: 'Lobster Two';
+}
+.total{
+    text-transform: capitalize;
+    font-family: fantasy;
+}
+.cart_icon{
+    cursor: pointer;
+    background-color: white;
+    color: rgb(139, 37, 19);
+    border: none;
+    border-radius: 5px;
+    padding-top: 7px;
+}
+.cart_icon:hover{
+    opacity: 0.8;
+}
+@media only screen and (max-width: 960px){
+    .cart_info{
+        display: none;
+    }
+    
 }

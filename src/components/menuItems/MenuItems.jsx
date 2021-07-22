@@ -3,7 +3,7 @@ import styles from '../menuItems/menuItems.module.css'
 import { ColdstoneContext } from '../../context/context';
 import { useState, useRef, useEffect } from 'react/cjs/react.development';
 
-function MenuItems(props){
+function MenuItems(){
     const {items, cart, setCart} = React.useContext(ColdstoneContext)
     console.log(items)
 
@@ -22,6 +22,7 @@ function MenuItems(props){
     
     const addToCart = ()=>{
         setCart([...cart, currItem])
+        setIsOpen(false)
     }
 
     const increaseQuantity = ()=>{

@@ -8,6 +8,7 @@ const itemArray = 'https://immense-eyrie-42860.herokuapp.com/Item'
 //rootUrl/google
 //rootUrl/facebook/facebook
 //rootUrl/cart/user
+//rootUrl/cart/
 
 const ColdstoneContext = React.createContext()
 
@@ -22,7 +23,10 @@ const ColdstoneProvider = ({children}) =>{
         }
         return response
     }
-
+    const deleteCart = (id) => {
+        const newCart = cart.filter(item => item._id !== id)
+        setCart(newCart)
+    }
     const googleUser = async()=>{
         const response = await axios.get(`${rootUrl}/auth/google`)
         console.log(response)
@@ -63,9 +67,9 @@ const ColdstoneProvider = ({children}) =>{
        })
        .then(response => console.log(response))
    }
- useEffect(() => {
+    useEffect(() => {
      getCartProducts()
- }, [cart])
-    return <ColdstoneContext.Provider value = {{loginUser,signupUser, googleUser, facebookUser, items, getCartProducts, cart, setCart}}>{children}</ColdstoneContext.Provider>
+        }, [cart])
+    return <ColdstoneContext.Provider value = {{loginUser,signupUser, deleteCart, googleUser, facebookUser, items, getCartProducts, cart, setCart}}>{children}</ColdstoneContext.Provider>
 }
 export {ColdstoneProvider, ColdstoneContext}

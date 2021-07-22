@@ -40,14 +40,14 @@
 }
 .user i{
     position: absolute;
-    left: 50px;
-    top: 30px;
+    left: 40px;
+    top: 20px;
     color: gray;
 }
 .password i{
     position: absolute;
-    left: 50px;
-    top: 30px;
+    left: 40px;
+    top: 20px;
     color: gray;
 }
 .button button{
