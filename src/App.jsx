@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import {Home, Login, Menu, Error, Signup} from './pages'
-import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ColdstoneContext, ColdstoneProvider } from './context/context.js'
 
 function App({handleLogin}){

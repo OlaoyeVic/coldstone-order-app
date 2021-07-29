@@ -37,6 +37,7 @@
 }
 .user,.password {
     position: relative;
+    width: 150%;
 }
 .user i{
     position: absolute;
@@ -53,16 +54,19 @@
 .button button{
     text-transform: uppercase;
     background-color: rgb(139, 37, 19);
-    padding: 10px 24px;
-    margin: 15px 90px;
-    width: 40%;
-    border-radius: 15px;
+    padding: 15px 24px;
+    margin: 20px 90px;
+    width: 50%;
+    border-radius: 10px;
     border: none;
     color: white;
     cursor: pointer;
 }
+.button button:hover{
+    opacity: 0.8;
+}
 h3{
-    margin: 5px 220px;
+    margin: 5px 180px;
     font-family: 'Roboto', sans-serif;
 }
 .product{
@@ -77,14 +81,27 @@ h1{
     position: absolute;
     right: 10px;
 }
-@media sreen and (max-width: 960px) {
+@media screen and (max-width: 960px){
     .container{
-        width: 300px;
-        float: none;
-        width: 100%;
-        height: 100%;
+        margin-left: -200px;
+        width: 100% !important;
+        height: 100vh;
+        border-radius: 1px;
     }
-    input[type=email],[type=password]{
-        width: 100%;
+    .product{
+        display: none !important;
+    }
+    .user, .password{
+        margin: 20px;
+    }
+    .button button{
+        padding: 20px 50px;
+        white-space: nowrap;
+        margin-top: 50px;
+    }
+    h3{
+        white-space: nowrap;
+        margin-left: 130px;
+        margin-top: 20px;
     }
 }

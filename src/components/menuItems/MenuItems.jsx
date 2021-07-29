@@ -2,6 +2,8 @@ import React from 'react';
 import styles from '../menuItems/menuItems.module.css'
 import { ColdstoneContext } from '../../context/context';
 import { useState, useRef, useEffect } from 'react/cjs/react.development';
+import { useHistory } from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch} from "react-router-dom"
 
 function MenuItems(){
     const {items, cart, setCart} = React.useContext(ColdstoneContext)
@@ -10,6 +12,7 @@ function MenuItems(){
     const [count, setCount] = useState(1)
     const [currItem, setCurrItem] = useState()
     const [isOpen, setIsOpen] = useState(false)
+    const history = useHistory()
 
     const openModal = (item) => {
         setIsOpen(true);
