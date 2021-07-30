@@ -10,6 +10,7 @@ function Login(){
     const {loginUser, googleUser, facebookUser} = React.useContext(ColdstoneContext)
     const [emailAddress, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [emailError, setEmailError] = useState('')
     const history = useHistory()
 
     const handleLogin = async (event) => {
@@ -30,7 +31,17 @@ function Login(){
     const handleFacebookLogin = (event) =>{
         event.preventDefault()
         facebookUser()
+    } 
+    const validateEmail = (event) => {
+        setEmail(event.target.value)
+      
+        if (validator.isEmail(setEmail)) {
+          setEmailError('Valid Email :)')
+        } else {
+          setEmailError('Enter valid Email!')
+        }
     }
+      
     return (
         <div>
         <Navbar />
@@ -45,7 +56,7 @@ function Login(){
                             type = "email" 
                             placeholder = "Email or mobile phone" 
                             className = {styles.logininput}
-                            onChange = {(event) => setEmail(event.target.value)} 
+                            onChange = {validateEmail} 
                         />
                         <i class="fa fa-user fa-xl"></i>
                     </div>

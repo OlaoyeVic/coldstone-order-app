@@ -87,6 +87,7 @@
       left: -110%;
       opacity: 1;
       transition: all 0.5s ease;
+      height: 70px;
     }
   
     .nav_menu .active {

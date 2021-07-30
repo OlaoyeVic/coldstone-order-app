@@ -14,15 +14,18 @@ function Signup(){
     const [password, setPassword] = useState('')
     const history = useHistory()
 
-    const handleSignup = (event)=>{
+
+    const handleSignup = async (event)=>{
         event.preventDefault()
-        signupUser({
+        const response = await signupUser({
             emailAddress,
             password,
             firstName,
             lastName
         })
-        history.push('/')
+        if(response.status === 200){
+            history.push('/')
+        }
     }
 
     return(

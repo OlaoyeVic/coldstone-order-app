@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -79,9 +80,18 @@ b{
     margin: 3em 10em;
     color: white;
 }
+h1{
+    font-family: 'roboto';
+}
 ::placeholder{
-    /* color: #f7f7f7; */
     opacity: 1;
+}
+input:invalid {
+    background-color: #ffdddd;
+}
+  
+form:invalid {
+    border: 5px solid #ffdddd;
 }
 @media screen and (max-width: 960px){
     .container{
