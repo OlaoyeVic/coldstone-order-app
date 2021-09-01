@@ -5,6 +5,7 @@ import how1 from '../../images/process1.png'
 import how2 from '../../images/process2.png'
 import how3 from '../../images/process3.png'
 import coldstoneBanner from '../../images/banner.png'
+import {Link} from 'react-router-dom'
 import { ColdstoneContext } from '../../context/context'
 
 function Info(){
@@ -16,7 +17,7 @@ function Info(){
             <img src = {item.imageUrl} className ={styles.item_image}/>
             <div className={styles.item_description}>
                 <div className={styles.text}><p>{item.description}</p></div>
-                <button>See More</button>
+                <Link to ="/menu"><button className={styles.see_more}>See More</button></Link>
             </div>
             </div>
             <div className={styles.item_name}>

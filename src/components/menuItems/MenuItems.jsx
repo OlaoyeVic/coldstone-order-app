@@ -3,7 +3,7 @@ import styles from '../menuItems/menuItems.module.css'
 import { ColdstoneContext } from '../../context/context';
 import { useState, useRef, useEffect } from 'react/cjs/react.development';
 import { useHistory } from 'react-router-dom'
-import {BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch} from "react-router-dom";
 
 function MenuItems(){
     const {items, cart, setCart} = React.useContext(ColdstoneContext)
@@ -89,6 +89,7 @@ function MenuItems(){
 }
 
 function ItemCard({ item, count, items, openModal}){
+    // const { items, cart, deleteCart } = React.useContext(ColdstoneContext)
     
     return(
         <div className = {styles.card}>
@@ -97,6 +98,7 @@ function ItemCard({ item, count, items, openModal}){
             <p className={styles.price}>${item.price}</p>
             <p>{item.description}</p>
             <p><button onClick={() => openModal(item)}>More Details...</button></p>
+            {/* <button className={styles.}>Go to cart</button> */}
         </div>
     )
 }

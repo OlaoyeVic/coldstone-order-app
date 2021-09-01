@@ -63,7 +63,20 @@
 }
 @media only screen and (max-width: 960px){
     .cart_info{
-        display: none;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: 60vh !important;
+        margin-top: auto;
+        text-align: center;
+        justify-content: center;
+        flex: 1 0 auto;
+    }
+    .cart_details{
+        text-align: left;
+    }
+    .total{
+        text-align: left;
     }
     
 }

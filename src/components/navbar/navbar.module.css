@@ -77,7 +77,7 @@
   }
   
   @media screen and (max-width: 960px) {
-    .nav_menu{
+    .nav_menuactive{
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -86,17 +86,19 @@
       top: 80px;
       left: -110%;
       opacity: 1;
-      transition: all 0.5s ease;
-      height: 70px;
+      transition: all ease-out; 
     }
-  
-    .nav_menu .active {
-      position: absolute;
-      background: #1f5156;
-      left: 0;
+    .nav_menu {
+      background: rgb(139, 37, 19);
       opacity: 1;
       transition: all 0.5s ease;
+      margin-right: 0;
       z-index: 1;
+      margin-top: 75px;
+      width: 100vh;
+      border-top: 1px solid #fff;
+      display: flex;
+      flex-direction: column;
     }
     .nav_item.active {
       color: #1f5156;

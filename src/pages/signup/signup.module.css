@@ -14,8 +14,8 @@
     overflow: hidden;
     position: absolute;
     top: 150px;
-    left: 270px;
-    width: 800px;
+    left: 400px;
+    width: 600px;
     height: 450px;
     margin: 0 auto 100px;
     background: #fff;
@@ -30,12 +30,8 @@
     outline: none;
 }
 form .wrapper{
-    width: 50vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 100%;
     padding: 10px 0px;
-    /* margin: 20px 20px; */
     margin-top: 20px;
     margin-left: 28px;
     height: 70px;
@@ -52,7 +48,7 @@ form .inputwrap{
     padding: 10px 0;
     margin: 10px 30px;
     height: 70px;
-    width: 50vw
+    width: 100%;
 }
 form .checkbox{
     margin-top: 100px;
@@ -70,18 +66,20 @@ b{
     text-transform: uppercase;
     background-color: rgb(139, 37, 19);
     border-radius: 10px;
-    width: 50%;
+    width: 75%;
     height: 35px;
     line-height: 35px;
     border: none;
     outline: none;
 	cursor: pointer;
     font-size: 1.1em;
-    margin: 3em 10em;
+    margin: 3em 5em;
     color: white;
 }
 h1{
-    font-family: 'roboto';
+    font-family: 'lobster two', monospace;
+    text-align: center;
+    margin-left: 10px;
 }
 ::placeholder{
     opacity: 1;
@@ -90,40 +88,25 @@ input:invalid {
     background-color: #ffdddd;
 }
   
-form:invalid {
-    border: 5px solid #ffdddd;
-}
-@media screen and (max-width: 960px){
+@media only screen and (max-width: 960px){
     .container{
         width: 100% !important;
-        margin-left: -270px;
-        height: 100vh;
-        flex-direction: column;
-        border-radius: 1px;
-        margin-top: -30px;
+        padding: 0;
+        margin: 0;
+        left: 0;
     }
-    .inputwrap>*:nth-child(1){
-        flex-direction: column;
-        padding: 14px 155px !important;
-        margin-top: 120px;
-        margin-left: 16px;
+    form .wrapper{
+        width:84%;
     }
-    .inputwrap>*:nth-child(2){
-        flex-direction: column;
-        padding: 14px 155px !important;
-        margin-top: 40px;
-        margin-left: 16px;
+    form .inputwrap{
+        width: 84%;
     }
-    .wrapper>*:nth-child(1),.wrapper>*:nth-child(2){
-        width: 100vw !important;
-        padding: 14px 70px !important;
-        margin: 20px;
-    }
-    form .checkbox{
-        margin-top: 240px;
+    h1{
+        text-align: center;
+        margin: 0;
     }
     .btn button{
-        margin: 50px 0 0 100px;
-        padding: 30px;
+        text-align: center;
+        margin: 3em 2.5em;
     }
 }

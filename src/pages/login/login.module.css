@@ -81,12 +81,14 @@ h1{
     position: absolute;
     right: 10px;
 }
-@media screen and (max-width: 960px){
+@media only screen and (max-width: 960px){
     .container{
         margin-left: -200px;
         width: 100% !important;
-        height: 100vh;
+        flex-direction: column !important;
+        height: 107%;
         border-radius: 1px;
+        justify-items: center;
     }
     .product{
         display: none !important;
@@ -96,12 +98,13 @@ h1{
     }
     .button button{
         padding: 20px 50px;
-        white-space: nowrap;
+        /* white-space: nowrap; */
         margin-top: 50px;
+        text-align: center;
     }
     h3{
         white-space: nowrap;
-        margin-left: 130px;
+        margin-left: 115px;
         margin-top: 20px;
     }
 }

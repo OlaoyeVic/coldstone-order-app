@@ -17,7 +17,7 @@ function Navbar(){
                     className = {styles.nav_logo}>
                         <img src = {logo} alt = "Logo" />
                     </NavLink>
-                    <ul className = {click ? styles.nav_menu .active : styles.nav_menu}>
+                    <ul className = {click ? styles.nav_menu : styles.nav_menuactive}>
                         <li className = {styles.nav_item}>
                             <NavLink 
                             exact to = "/" 

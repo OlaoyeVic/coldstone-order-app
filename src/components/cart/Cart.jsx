@@ -9,6 +9,7 @@ import { PaystackButton } from "react-paystack";
 
 function Cart(){
     const { items, cart, deleteCart } = React.useContext(ColdstoneContext)
+    const {price, quantity} = cart
     const [paystackHook, setPaystackHook] = useState({
         key: "pk_test_1ae065aad2dcf4b6bb42ac89256c8a77827c4138",
         email: "foobar@example.com",
@@ -64,7 +65,7 @@ function Cart(){
             {cart.map((carts) =>(
                 <div className={styles.cart_details} key={carts._id} >
                 <p>Variety - {carts.name}</p>
-                <p>Price - ₦{carts.price}</p>
+                <p>Price - $ {carts.price}</p>
                 <p>Quantity -</p>
                 <button className={styles.cart_icon}  onClick={() => handleDeleteCart(carts._id)}>
                 <i class="fas fa-trash-alt"></i></button>

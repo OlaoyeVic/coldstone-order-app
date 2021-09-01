@@ -5,12 +5,14 @@ import styles from '../login/login.module.css'
 import image from '../../images/product-login.png'
 import {ColdstoneContext} from '../../context/context.js'
 import {Link, useHistory, useLocation} from 'react-router-dom'
+import validator from 'validator'
 
 function Login(){
     const {loginUser, googleUser, facebookUser} = React.useContext(ColdstoneContext)
     const [emailAddress, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [emailError, setEmailError] = useState('')
+    const [loadingButton, setLoadingButton] = useState(false)
     const history = useHistory()
 
     const handleLogin = async (event) => {
@@ -23,6 +25,12 @@ function Login(){
         if(response.status === 200){
             history.push('/')
         }
+        else if(response.status === 500){
+            alert("Enter a valid email address or password")
+        }
+    }
+    const openSpinner = () => {
+        setLoadingButton(true)
     }
     const handleGoogleLogin = (event) =>{
         event.preventDefault()
@@ -32,15 +40,6 @@ function Login(){
         event.preventDefault()
         facebookUser()
     } 
-    const validateEmail = (event) => {
-        setEmail(event.target.value)
-      
-        if (validator.isEmail(setEmail)) {
-          setEmailError('Valid Email :)')
-        } else {
-          setEmailError('Enter valid Email!')
-        }
-    }
       
     return (
         <div>
@@ -56,7 +55,10 @@ function Login(){
                             type = "email" 
                             placeholder = "Email or mobile phone" 
                             className = {styles.logininput}
-                            onChange = {validateEmail} 
+                            onChange = {(event) =>{
+                                setEmail(event.target.value)
+                                openSpinner()
+                            }}
                         />
                         <i class="fa fa-user fa-xl"></i>
                     </div>
