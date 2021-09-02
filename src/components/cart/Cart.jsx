@@ -3,17 +3,25 @@ import { useContext } from 'react';
 import { useState } from 'react/cjs/react.development';
 import { ColdstoneContext } from '../../context/context';
 import styles from '../cart/cart.module.css'
-import MenuItems from '../menuItems/MenuItems'
+
 import { usePaystackPayment } from 'react-paystack';
 import { PaystackButton } from "react-paystack";
 
 function Cart(){
     const { items, cart, deleteCart } = React.useContext(ColdstoneContext)
     const {price, quantity} = cart
+    console.log(typeof price)
+    console.log(cart)
+
+    const totalPrice = cart.map(carts =>{
+        return(carts.price * carts.quantity)
+    })
+    console.log(totalPrice)
+
     const [paystackHook, setPaystackHook] = useState({
         key: "pk_test_1ae065aad2dcf4b6bb42ac89256c8a77827c4138",
         email: "foobar@example.com",
-        amount: 10000
+        amount: totalPrice * 100
     })
     const callback = (response) => {
         console.log(response); // card charged successfully, get reference here
@@ -66,13 +74,13 @@ function Cart(){
                 <div className={styles.cart_details} key={carts._id} >
                 <p>Variety - {carts.name}</p>
                 <p>Price - $ {carts.price}</p>
-                <p>Quantity -</p>
+                <p>Quantity - {carts.quantity}</p>
                 <button className={styles.cart_icon}  onClick={() => handleDeleteCart(carts._id)}>
                 <i class="fas fa-trash-alt"></i></button>
+                <hr/>
+                <p className={styles.total}>Total: ${carts.price * carts.quantity}</p>
                 </div>
             ))}
-            <hr/>
-            <p className={styles.total}>Total </p>
         </div>
     )
 }

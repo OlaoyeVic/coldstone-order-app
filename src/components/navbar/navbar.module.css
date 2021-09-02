@@ -31,7 +31,6 @@
     width: 20%;
     align-items: center;
     cursor: pointer;
-    margin-right: -150px;
   }
   
   .nav_menu {
@@ -76,7 +75,7 @@
     display: none;
   }
   
-  @media screen and (max-width: 960px) {
+  @media only screen and (max-width: 960px) {
     .nav_menuactive{
       display: flex;
       flex-direction: column;
@@ -118,5 +117,8 @@
       font-size: 1.8rem;
       cursor: pointer;
       color: white;
+    }
+    .nav_logo img{
+      width: 35%;
     }
   }

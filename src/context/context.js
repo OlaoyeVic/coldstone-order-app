@@ -29,7 +29,7 @@ const ColdstoneProvider = ({children}) =>{
     }
     const googleUser = async()=>{
         const response = await axios.get(`${rootUrl}/auth/google`)
-        console.log(response)
+        // console.log(response)
         return response
     }
 

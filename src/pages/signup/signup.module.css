@@ -13,8 +13,8 @@
     display: flex;
     overflow: hidden;
     position: absolute;
-    top: 150px;
-    left: 400px;
+    top: 180px;
+    left: 450px;
     width: 600px;
     height: 450px;
     margin: 0 auto 100px;
@@ -75,6 +75,9 @@ b{
     font-size: 1.1em;
     margin: 3em 5em;
     color: white;
+}
+.btn button:hover{
+    opacity: 0.8;
 }
 h1{
     font-family: 'lobster two', monospace;

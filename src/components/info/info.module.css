@@ -22,6 +22,9 @@
     height: 100px;
     width: 150px;
     font-family: cursive;
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(139, 37, 19);
     cursor: pointer;
 }
 .header{
@@ -98,10 +101,17 @@
     padding: 50px;
 }
 .process_container p{
-    display: none;
+    position: absolute;
+    font-family: 'Lobster Two', cursive;
+    color: white;
+    font-size: 30px;
 }
 .process_container caption{
-    display: none;
+    position: absolute;
+    margin-top: 330px;
+    font-family: 'Lobster Two', cursive;
+    color: white;
+    font-size: 24px;
 }
 .banner_container img{
     position: relative;
@@ -130,6 +140,7 @@
         display: flex;
         font-family: 'Lobster Two', cursive;
         color: white;
+        position: unset;
     }
     .process_container p{
         display: flex;
@@ -137,5 +148,6 @@
         color: white;
         align-items: center;
         justify-content: center;
+        position: unset;
     }
 }

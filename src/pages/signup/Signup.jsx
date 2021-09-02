@@ -23,7 +23,7 @@ function Signup(){
             firstName,
             lastName
         })
-        if(response.status === 200){
+        if(response.status === 201){
             history.push('/')
         }
     }

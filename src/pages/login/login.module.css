@@ -7,7 +7,7 @@
     display: flex;
     overflow: hidden;
     position: absolute;
-    top: 120px;
+    top: 180px;
     left: 200px;
     width: 1000px;
     height: 500px;
@@ -89,6 +89,7 @@ h1{
         height: 107%;
         border-radius: 1px;
         justify-items: center;
+        top: 120px;
     }
     .product{
         display: none !important;
@@ -98,7 +99,6 @@ h1{
     }
     .button button{
         padding: 20px 50px;
-        /* white-space: nowrap; */
         margin-top: 50px;
         text-align: center;
     }

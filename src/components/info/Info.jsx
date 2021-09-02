@@ -45,7 +45,7 @@ function Info(){
         <caption>
             Cold stone creamery is all about delivering the finest ice cream made for you.
             At coldstone creamery, we also offer a variety of indulgent drinks that will 
-            make you come back for more
+            make you come back for more.
             </caption>
         </div>
         <div className={styles.banner_container}>

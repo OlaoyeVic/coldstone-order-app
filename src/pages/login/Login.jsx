@@ -73,7 +73,6 @@ function Login(){
                    </div>
                    <div className = {styles.button}>
                        <button onClick={(event) => handleLogin(event)}>Login</button>
-                       {/* <button style = {{backgroundColor: '#3B5998'}} onClick={(event)=>handleFacebookLogin(event)}>Login with facebook</button> */}
                        <button onClick={(event)=>handleGoogleLogin(event)}>Login with Google</button>
                        <h3>New on EatnGo?</h3>
                        <Link to = "/signup"><button>Create Account</button></Link>

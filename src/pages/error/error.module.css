@@ -1,6 +1,83 @@
-.img{
-    min-height: 100vh;
-    background-color: #f7f7f7;
-    display: flex;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.error_page{
+    width: 100%;
+    height: 100%;
+    background-color: #f1f5f8;
+    object-fit: cover;
+}
+.error_page b{
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 1.25;
+    font-family: 'Lobster Two', sans-serif;
+    word-spacing: 0.1rem;
+    margin: 0;
+    padding: 0;
+}
+.error_img{
+    margin-top: 50px;
+    display: block;
+    width: 30%;
+    border-radius: 10px;
+    border: 3px double rgb(139, 37, 19);
+    margin-left: auto;
+    margin-right: auto;
+}
+.p1{
+    display: block;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Lobster Two', cursive;
+    white-space: nowrap;
+    text-align: center;
+}
+.p2{
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Lobster Two', cursive;
+    white-space: nowrap;
+    text-align: center;
+}
+.redirect_btn{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(139, 37, 19);
+    color: white;
+    border: none;
+    width: 150px;
+    height: 45px;
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 960px){
+    .error_page{
+        display: flex;
+        flex-direction: column !important;
+        width: 100% !important ;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+    .error_page b{
+        width: 100%;
+        font-size: 4vw;
+    }
+    .p1, .p2{
+        text-align: center;
+        font-size: 4vw;
+        text-align: center;
+    }
 }
