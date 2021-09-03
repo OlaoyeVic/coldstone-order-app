@@ -5,17 +5,21 @@ import backg from '../../images/coldstoneBackg.jpg'
 import { ColdstoneContext } from '../../context/context'
 import {useHistory} from 'react-router-dom'
 import { Footer } from '../../components'
+import { useAlert } from 'react-alert'
 
 function Signup(){
     const {signupUser} = useContext(ColdstoneContext)
     const [firstName, setFirstName] = useState('')
+    const [loading, setLoading] = useState(false)
     const [lastName, setLastName] = useState('')
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
     const history = useHistory()
+    const alert = useAlert()
 
 
     const handleSignup = async (event)=>{
+        setLoading(true)
         event.preventDefault()
         const response = await signupUser({
             emailAddress,
@@ -25,6 +29,11 @@ function Signup(){
         })
         if(response.status === 201){
             history.push('/')
+            setLoading(false)
+        }
+        else if(response.status === 400){
+            alert.show('Fill in  a valid email address or password!')
+            console.log('fill in the email')
         }
     }
 
@@ -67,7 +76,13 @@ function Signup(){
                            </label>
                    </div>
                    <div className = {styles.btn}>
-                       <button type="submit" onClick={(event) => handleSignup(event)}>Sign up</button>
+                        {loading ? 
+                            <button type="submit" className= {styles.buttonload}>
+                            <i class="fa fa-spinner fa-spin"></i>Loading
+                            </button>
+                        :
+                        <button type="submit" onClick={(event) => handleSignup(event)}>Sign up</button>
+                        }
                    </div>
                 </form>
             </div>

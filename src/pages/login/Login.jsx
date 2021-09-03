@@ -5,17 +5,17 @@ import styles from '../login/login.module.css'
 import image from '../../images/product-login.png'
 import {ColdstoneContext} from '../../context/context.js'
 import {Link, useHistory, useLocation} from 'react-router-dom'
-import validator from 'validator'
 
 function Login(){
     const {loginUser, googleUser, facebookUser} = React.useContext(ColdstoneContext)
     const [emailAddress, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [emailError, setEmailError] = useState('')
-    const [loadingButton, setLoadingButton] = useState(false)
+    const [isloading, setIsLoading] = useState(false)
+    const [googleLoading, setGoogleLoading] = useState(false)
     const history = useHistory()
 
     const handleLogin = async (event) => {
+        setIsLoading(true)
         event.preventDefault()
         const response = await loginUser({
             emailAddress,
@@ -29,10 +29,9 @@ function Login(){
             alert("Enter a valid email address or password")
         }
     }
-    const openSpinner = () => {
-        setLoadingButton(true)
-    }
+
     const handleGoogleLogin = (event) =>{
+        setGoogleLoading(true)
         event.preventDefault()
         googleUser()
     }
@@ -57,7 +56,6 @@ function Login(){
                             className = {styles.logininput}
                             onChange = {(event) =>{
                                 setEmail(event.target.value)
-                                openSpinner()
                             }}
                         />
                         <i class="fa fa-user fa-xl"></i>
@@ -72,8 +70,20 @@ function Login(){
                         <i class="fa fa-lock fa-xl"></i>
                    </div>
                    <div className = {styles.button}>
-                       <button onClick={(event) => handleLogin(event)}>Login</button>
-                       <button onClick={(event)=>handleGoogleLogin(event)}>Login with Google</button>
+                       {isloading ?
+                        <button class="buttonload">
+                            <i class="fa fa-spinner fa-spin"></i>Loading
+                        </button>
+                        :
+                        <button onClick={(event) => handleLogin(event)}>Login</button>
+                       }
+                       {googleLoading ?
+                        <button class="buttonload">
+                            <i class="fa fa-spinner fa-spin"></i>Loading
+                        </button>
+                        :
+                        <button onClick={(event)=>handleGoogleLogin(event)}>Login with Google</button>
+                       }
                        <h3>New on EatnGo?</h3>
                        <Link to = "/signup"><button>Create Account</button></Link>
                    </div>
