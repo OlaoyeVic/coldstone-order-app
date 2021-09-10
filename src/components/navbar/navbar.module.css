@@ -43,7 +43,7 @@
   .nav_link {
     color: #fff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.2rem;
     height: 100%;
     border-bottom: 3px solid transparent;
   }
