@@ -14,7 +14,6 @@ function Cart(){
     const totalPrice = cart.map(carts =>{
         return(carts.price * carts.quantity)
     })
-    console.log(totalPrice)
 
     const [paystackHook, setPaystackHook] = useState({
         key: "pk_test_1ae065aad2dcf4b6bb42ac89256c8a77827c4138",
