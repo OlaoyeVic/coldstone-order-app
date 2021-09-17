@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch} 
 
 function MenuItems(){
     const {items, cart, setCart} = React.useContext(ColdstoneContext)
-    console.log(items)
+ 
 
     const [count, setCount] = useState(1)
     const [currItem, setCurrItem] = useState()
