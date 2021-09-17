@@ -10,8 +10,6 @@ import { PaystackButton } from "react-paystack";
 function Cart(){
     const { items, cart, deleteCart } = React.useContext(ColdstoneContext)
     const {price, quantity} = cart
-    console.log(typeof price)
-    console.log(cart)
 
     const totalPrice = cart.map(carts =>{
         return(carts.price * carts.quantity)
