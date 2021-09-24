@@ -3,8 +3,8 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-const rootUrl = 'https://immense-eyrie-42860.herokuapp.com'
-const itemArray = 'https://immense-eyrie-42860.herokuapp.com/Item'
+const rootUrl = 'https://immense-eyrie-42860'
+const itemArray = 'https://immense-eyrie-42860/Item'
 //rootUrl/google
 //rootUrl/facebook/facebook
 //rootUrl/cart/user
