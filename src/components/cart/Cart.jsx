@@ -18,7 +18,7 @@ function Cart(){
     const [paystackHook, setPaystackHook] = useState({
         key: "pk_test_1ae065aad2dcf4b6bb42ac89256c8a77827c4138",
         email: "foobar@example.com",
-        amount: totalPrice * 100
+        amount: 10000
     })
     const callback = (response) => {
         console.log(response); // card charged successfully, get reference here
